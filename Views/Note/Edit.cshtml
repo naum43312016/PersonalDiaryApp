@@ -1,0 +1,18 @@
+﻿@model Note
+@{
+    ViewData["Title"] = "Edit";
+}
+
+    <form asp-controller="Note" asp-action="EditNote" method="post">
+        <div class="form-group">
+            <textarea name="text" asp-for="@Model.Text" required class="form-control" placeholder="Your Text" id="exampleFormControlTextarea1" rows="10">
+            @Model.Text
+        </textarea>
+        </div>
+        <input type="number" hidden asp-for="@Model.Id" value="@Model.Id" />
+        <input type="text" hidden asp-for="@Model.UserId" value="@Model.UserId" />
+        <input type="datetime" hidden asp-for="@Model.Date" value="@Model.Date" />
+        <button class="btn btn-primary text-center" type="submit">Submit</button>
+    </form>
+
+

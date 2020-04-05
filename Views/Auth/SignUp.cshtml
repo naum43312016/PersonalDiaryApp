@@ -1,0 +1,22 @@
+﻿@model RegisterModel
+@{
+    ViewData["Title"] = "SignUp";
+}
+
+<div class="login-form">
+    <form asp-controller="auth" asp-action="Register" method="post">
+        <div class="avatar"><i class="material-icons">&#xE7FF;</i></div>
+        <h4 class="modal-title">Create Account</h4>
+        <div class="form-group">
+            <input type="text" asp-for="@Model.UserName" class="form-control" placeholder="Username" required="required">
+        </div>
+        <div class="form-group">
+            <input type="email" asp-for="@Model.Email" class="form-control" placeholder="Email" required="required">
+        </div>
+        <div class="form-group">
+            <input type="password" asp-for="@Model.Password" class="form-control" placeholder="Password" required="required">
+        </div>
+        <input type="submit" class="btn btn-primary btn-block btn-lg" value="Register">
+    </form>
+    <div class="text-center small">Have an account? <a asp-controller="auth" asp-action="SignIn">Sign in</a></div>
+</div>
